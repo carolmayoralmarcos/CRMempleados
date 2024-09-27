@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+        @if(usuariosService.isLogged()){
+        <li [routerLink]="['/empleados']" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">
+            Lista empleados
+        </li>
+        <li [routerLink]="['/empleados', 'nuevo']" routerLinkActive="activo">Nuevo empleado</li>
+        <li (click)="onClickLogout()">Logout</li>
+        }@else{
+        <li [routerLink]="['/registro']" routerLinkActive="activo">Registro</li>
+        <li [routerLink]="['/login']" routerLinkActive="activo">Login</li>
+        }
+    </ul>
+</nav>

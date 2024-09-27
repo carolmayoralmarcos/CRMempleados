@@ -1,0 +1,17 @@
+@if(empleado){
+<p-card [header]="empleado.nombre + ' ' + empleado.apellidos" [subheader]="empleado.email">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <p>ID: {{empleado._id}}</p>
+    <p>Teléfono: {{empleado.telefono}}</p>
+    <p>Departamento: {{empleado.departamento}}</p>
+    <p>Salario: {{empleado.salario | currency:'EUR'}}</p>
+    <p>Creado: {{empleado.createdAt | date:'dd-MM-yyyy HH:mm' }}</p>
+    <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+            <p-button label="Borrar" severity="danger" class="w-full" styleClass="w-full" (click)="onClick(empleado._id)" />
+            <p-button [routerLink]="['/empleados', empleado._id]" label="Ver detalle" class="w-full ms-2" styleClass="w-full" />
+        </div>
+    </ng-template>
+</p-card>
+}

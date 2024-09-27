@@ -1,0 +1,7 @@
+<div class="row g-3">
+    @for(emp of arrEmpleados; track emp._id){
+    <div class="col-12 col-sm-6 col-md-4">
+        <card-empleado [empleado]="emp" (empleadoBorrado)="onEmpleadoBorrado($event)"></card-empleado>
+    </div>
+    }
+</div>

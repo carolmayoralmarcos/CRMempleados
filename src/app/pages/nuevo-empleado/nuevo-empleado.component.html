@@ -1,0 +1,42 @@
+<form class="mt-5" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <p-floatLabel>
+            <input type="text" id="inputNombre" pInputText formControlName="nombre">
+            <label for="inputNombre">Nombre</label>
+        </p-floatLabel>
+    </div>
+    <div class="mb-4">
+        <p-floatLabel>
+            <input type="text" id="inputApellidos" pInputText formControlName="apellidos">
+            <label for="inputApellidos">Apellidos</label>
+        </p-floatLabel>
+    </div>
+    <div class="mb-4">
+        <p-floatLabel>
+            <input type="text" id="inputEmail" pInputText formControlName="email">
+            <label for="inputEmail">Email</label>
+        </p-floatLabel>
+    </div>
+    <div class="mb-4">
+        <p-floatLabel>
+            <input type="text" id="inputTelefono" pInputText formControlName="telefono">
+            <label for="inputTelefono">Teléfono</label>
+        </p-floatLabel>
+    </div>
+    <div class="mb-4">
+        <p-dropdown [options]="departamentos" optionLabel="name" placeholder="Selecciona el departamento" formControlName="departamento"></p-dropdown>
+    </div>
+    <div class="mb-4">
+        <p-floatLabel>
+            <input type="number" id="inputSalario" pInputText formControlName="salario">
+            <label for="inputSalario">Salario</label>
+        </p-floatLabel>
+    </div>
+    <p-button type="submit" label="Enviar" [outlined]="true" severity="info" />
+</form>
+
+<ul>
+    @for(err of errores; track $index){
+    <li>{{err.message}}</li>
+    }
+</ul>
